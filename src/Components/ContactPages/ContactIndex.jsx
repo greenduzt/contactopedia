@@ -12,9 +12,27 @@ class ContactIndex extends React.Component {
     super(props);
     this.state = {
       contactList: [
-        { id: 1, name: "Ben Parker", phone: "666-666-7770", email: "benp@yahoo.com", isFavorite: true },
-        { id: 2, name: "Alan Donald", phone: "112-456-9888" , email: "aland@yahoo.com", isFavorite: false },
-        { id: 3, name: "Phoenix Sava", phone: "166-636-5720", email: "ps780@yahoo.com", isFavorite: true }
+        {
+          id: 1,
+          name: "Ben Parker",
+          phone: "666-666-7770",
+          email: "benp@yahoo.com",
+          isFavorite: true,
+        },
+        {
+          id: 2,
+          name: "Alan Donald",
+          phone: "112-456-9888",
+          email: "aland@yahoo.com",
+          isFavorite: false,
+        },
+        {
+          id: 3,
+          name: "Phoenix Sava",
+          phone: "166-636-5720",
+          email: "ps780@yahoo.com",
+          isFavorite: true,
+        },
       ],
     };
   }
@@ -32,13 +50,27 @@ class ContactIndex extends React.Component {
               <RemoveAllContact />
             </div>
             <div className="row py-2">
-              <AddContact />
+              <div className="col-8 offset-2 row">
+                <AddContact />
+              </div>
             </div>
             <div className="row py-2">
-              <FavoriteContacts contacts ={this.state.contactList.filter((u) => u.isFavorite === true)} />
+              <div className="col-8 offset-2 row">
+                <FavoriteContacts
+                  contacts={this.state.contactList.filter(
+                    (u) => u.isFavorite === true
+                  )}
+                />
+              </div>
             </div>
             <div className="row py-2">
-              <GeneralContact contacts ={this.state.contactList.filter((u) => u.isFavorite === false)} />
+              <div className="col-8 offset-2 row">
+                <GeneralContact
+                  contacts={this.state.contactList.filter(
+                    (u) => u.isFavorite === false
+                  )}
+                />
+              </div>
             </div>
           </div>
         </div>
