@@ -34,7 +34,7 @@ class AddContact extends React.Component {
       });
     }
 
-    if (response.status == "success") {
+    if (response.status === "success") {
       this.setState({ errorMessage: undefined, successMessage: response.msg });
       document.querySelector(".contact-form").reset();
     } else {
@@ -91,7 +91,7 @@ class AddContact extends React.Component {
               ></input>
             </div>
 
-            {this.state.errorMessage == undefined ? (
+            {this.state.errorMessage === undefined ? (
               <div></div>
             ) : (
               <div className="col-12 text-center text-danger">
@@ -99,7 +99,7 @@ class AddContact extends React.Component {
               </div>
             )}
 
-            {this.state.successMessage == undefined ? (
+            {this.state.successMessage === undefined ? (
               <div></div>
             ) : (
               <div className="col-12 text-center text-success">
